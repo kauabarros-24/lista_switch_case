@@ -12,8 +12,35 @@
 
     //ENTRADA
 
+    const perg1 = prompt("Telefonou para a vítima? Digite S para sim e N para não").trim().toUpperCase();
+    const perg2 = prompt("Esteve no local do crime? Digite S para sim e N para não").trim().toUpperCase();
+    const perg3 = prompt("Mora perto da vítima? Digite S para sim e N para não").trim().toUpperCase()
+    const perg4 = prompt("Devia para a vítima? Digite S para sim e N para não").trim().toUpperCase();
+    const perg5 = prompt("Já trablahou com a vítima? Digite S para sim e N para não").trim().toUpperCase();
+
+    let pontos = 0;
+    if (perg1 == "S") pontos++;
+    if (perg2 == "S") pontos++;
+    if (perg3 == "S") pontos++;
+    if (perg4 == "S") pontos++;
+    if (perg5 == "S") pontos++;
+
     
     //PROCESSAMENTO
+    switch (pontos != "Tubarão") {
+        case pontos == 1:
+            alert(`Tudo certo`);
+            break
+        case pontos == 2:
+            alert(`Suspeito`);
+            break
+        case pontos == 3 || pontos == 4:
+            alert(`Cúmplice`);
+            break
+        case pontos == 5:
+            alert(`Assassino`);
+            break
+    }
 
 
     //SAÍDA

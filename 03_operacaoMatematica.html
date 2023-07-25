@@ -7,12 +7,55 @@
     - inteiro ou decimal.
     */
 
-    //ENTRADA
-
+    const n1 = Number((prompt("Digite um valor")).replace(",", "."));
+    const n2 = Number((prompt("Digite outro valor: ")).replace(",", "."));
+    const op = prompt("Digite um operação");
+    let apoio;
 
     //PROCESSAMENTO
+    switch (apoio) {
+        case op == "+":
+            apoio = n1 + n2;
+            break;
+        case op == "-":
+            apoio = n1 - n2;
+            break;
+        case op == "*":
+            apoio = n1 * n2;
+            break;
+        case op == "/":
+            apoio = n1 / n2;
+            break;
+    }
 
-    
-    //SAÍDA
+
+    if (apoio % 2 === 0) {
+        if (apoio < 0)
+            alert(`${apoio} é par, inteiro e negativo`);
+        else
+            alert(`${apoio} é par, inteiro e positivo`);
+    }
+
+    else {
+        if (Number.isInteger(apoio)) {
+            if (apoio < 0) {
+                alert(`${apoio} é inteiro, negativo e ímpar`);
+            }
+            else {
+                alert(`${apoio} é inteiro, positivo e ímpar`);
+            }
+        }
+        else {
+            if (apoio > 0) {
+                alert(`${apoio.toFixed(1)} é decimal, ímpar e negativo`);
+            }
+            else
+                alert(`${apoio.toFixed(1)} é decimal, ímpar e positivo`);
+        }
+    }
+
+
+
+
 
 </script>
