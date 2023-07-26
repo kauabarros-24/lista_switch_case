@@ -11,6 +11,7 @@
     const n2 = Number((prompt("Digite outro valor: ")).replace(",", "."));
     const op = prompt("Digite um operação");
     let apoio;
+    let resposta;
 
     //PROCESSAMENTO
     switch (apoio) {
@@ -29,32 +30,34 @@
     }
 
 
-    if (apoio % 2 === 0) {
-        if (apoio < 0)
-            alert(`${apoio} é par, inteiro e negativo`);
-        else
-            alert(`${apoio} é par, inteiro e positivo`);
-    }
+    switch (apoio % 2 === 0) {
+        case apoio < 0:
+            resposta = `É inteiro, negativo e par`;
+            break;
+        case apoio > 0:
+            resposta = `É inteiro, positvo e par`;
+            break;
+        case apoio === 0:
+            resposta = `NÃO POSSUI PROPRIEDADES`;
+            break;
 
-    else {
-        if (Number.isInteger(apoio)) {
-            if (apoio < 0) {
-                alert(`${apoio} é inteiro, negativo e ímpar`);
+    }
+    switch (apoio % 2 !== 0) {
+        case apoio < 0:
+            if (Number.isInteger(apoio)) {
+                resposta = `é inteiro, negativo e ímpar`;
             }
+
             else {
-                alert(`${apoio} é inteiro, positivo e ímpar`);
+                resposta = `é decimal, negativo e ímpar`;
             }
-        }
-        else {
-            if (apoio > 0) {
-                alert(`${apoio.toFixed(1)} é decimal, ímpar e negativo`);
-            }
-            else
-                alert(`${apoio.toFixed(1)} é decimal, ímpar e positivo`);
-        }
+            break;
+        case 
+
+
+
+
     }
-
-
 
 
 
