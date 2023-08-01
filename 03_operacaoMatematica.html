@@ -7,57 +7,49 @@
     - inteiro ou decimal.
     */
 
-    const n1 = Number((prompt("Digite um valor")).replace(",", "."));
-    const n2 = Number((prompt("Digite outro valor: ")).replace(",", "."));
-    const op = prompt("Digite um operação");
+    const numero1 = Number((prompt(`Digite um número: `)).replace(",", "."));
+    const numero2 = Number((prompt(`Digite outro número: `)).replace(",", "."));
+    const operação = prompt(`Digite a operação: `);
     let apoio;
-    let resposta;
 
-    //PROCESSAMENTO
-    switch (apoio) {
-        case op == "+":
-            apoio = n1 + n2;
+    switch (operação != "%") {
+        case operação == "+":
+            apoio = numero1 + numero2;
             break;
-        case op == "-":
-            apoio = n1 - n2;
+        case operação == "*":
+            apoio = numero1 * numero2;
             break;
-        case op == "*":
-            apoio = n1 * n2;
+        case operação == "-":
+            apoio = numero1 - numero2;
             break;
-        case op == "/":
-            apoio = n1 / n2;
+        case operação == "/":
+            apoio = numero1 / numero2;
             break;
     }
 
-
-    switch (apoio % 2 === 0) {
-        case apoio < 0:
-            resposta = `É inteiro, negativo e par`;
-            break;
-        case apoio > 0:
-            resposta = `É inteiro, positvo e par`;
-            break;
-        case apoio === 0:
-            resposta = `NÃO POSSUI PROPRIEDADES`;
-            break;
-
+    if (apoio % 2 === 0) {
+        if (apoio > 0)
+            alert(`${apoio} é inteiro, positivo e par`);
+        else
+            alert(`${apoio} é inteiro, negativo e par`);
     }
-    switch (apoio % 2 !== 0) {
-        case apoio < 0:
-            if (Number.isInteger(apoio)) {
-                resposta = `é inteiro, negativo e ímpar`;
-            }
+    else {
+        if (apoio > 0) {
+            if (Number.isInteger(apoio))
+                alert(`${apoio} é inteiro, positivo e ímpar`);
+            else
+                alert((`${apoio.toFixed(1)} é decimal, positivo e ímpar`).replace(".", ","));
 
-            else {
-                resposta = `é decimal, negativo e ímpar`;
-            }
-            break;
-        case 
-
-
-
-
+        }
+        else
+            if (Number.isInteger(apoio))
+                alert(`${apoio} é inteiro, negativo e ímpar`);
+            else
+                alert((`${apoio.toFixed(1)} é decimal, positivo e ímpar`).replace(".", ","));
     }
+
+
+
 
 
 
